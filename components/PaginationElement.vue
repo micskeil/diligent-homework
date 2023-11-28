@@ -8,16 +8,24 @@
     >
       &lt;&lt;
     </button>
-    <span v-if="page-1" class="text-lg" @click="emit('update:page', page - 1)">{{ page - 1  }}</span>
+    <div v-if="page-1">
+      <span class="text-lg cursor-pointer" @click="emit('update:page', 1)">1</span>
+      ..
+      <span class="text-lg cursor-pointer" @click="emit('update:page', page - 1)">{{ page - 1  }}</span>
+    </div>
     <span class="font-bold text-xl">{{ page  }}</span>
-    <span class=" text-lg"  @click="emit('update:page', page + 1)">{{ page + 1 }}</span>
-    <button
-      class=" px-4 cursor-pointer"
-      :disabled="page === totalPages"
-      @click="emit('update:page', page + 1)"
-    >
-       >>
-    </button>
+    <span v-if="totalPages > page + 1" class=" text-lg cursor-pointer"  @click="emit('update:page', page + 1)">{{ page + 1 }}</span>
+    <div v-if="totalPages > page">
+      ..
+      <span class=" text-lg cursor-pointer"  @click="emit('update:page', totalPages)">{{ totalPages }}</span>
+      <button
+        class=" px-4 cursor-pointer"
+        :disabled="page === totalPages"
+        @click="emit('update:page', page + 1)"
+      >
+         >>
+      </button>
+    </div>
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
-  <div class="relative flex-grow min-w-[12rem] max-w-[22rem] h-80 bg-white rounded-xl overflow-hidden border-1 shadow-md hover:scale-105">
-    <div class="absolute text-slate-700 font-bold top-0 right-1 z-10">
+  <div class="relative cursor-pointer flex-grow min-w-[12rem] max-w-[22rem] h-80 bg-white rounded-xl overflow-hidden border-1 shadow-md hover:scale-105">
+    <div class="absolute text-slate-700 font-bold top-1 right-1 z-10 rounded-full bg-yellow-300 p-1">
       {{  movie.vote_average.toFixed(1) }}
     </div>
     <div class="flex-grow flex flex-col justify-center items-center">
