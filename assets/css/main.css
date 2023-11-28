@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#__nuxt {
+  @apply bg-gray-100 min-h-screen flex flex-col justify-between;
+}
